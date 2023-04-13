@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
--- Engineer: Alejandro Daniel Lemus Najera 
+-- Author: Alejandro Daniel Lemus Najera 
 -- 
 -- Create Date: 03:56:57 07/12/2020 
 -- Design Name: Full Adder
--- Module Name: alu_fa - Behavioral 
+-- Module Name: FA - Behavioral 
 -- Project Name: 32 Bit RISC Processor
 -- Tool versions: ISE Design Suite 14.6
 -- Description: Full adder implementation based on its sum-of-products represen-
@@ -13,11 +13,11 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity FA is
-    Port ( A : in  STD_LOGIC;
-           B : in  STD_LOGIC;
-           CIN : in  STD_LOGIC;
-           S : out  STD_LOGIC;
-           COUT : out  STD_LOGIC);
+    Port ( A : in  STD_LOGIC; -- first input operand
+           B : in  STD_LOGIC; -- second input operand
+           CIN : in  STD_LOGIC; -- carry input bit
+           S : out  STD_LOGIC; -- sum output
+           COUT : out  STD_LOGIC); -- carry output bit
 end FA;
 
 architecture Behavioral of FA is

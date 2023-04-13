@@ -17,7 +17,7 @@ entity ADDR_32 is
            B : in  STD_LOGIC_VECTOR (31 downto 0); -- B[31:0] operand
            CIN : in  STD_LOGIC;			   -- CIN input carry bit
            S : out  STD_LOGIC_VECTOR (31 downto 0); -- Result S[31:0]
-           COUT : out  STD_LOGIC); 		   -- COUT output carry bit
+           COUT : out  STD_LOGIC ); 		   -- COUT output carry bit
 end ADDR_32;
 
 architecture Behavioral of ADDR_32 is
@@ -39,12 +39,20 @@ signal int_cout : STD_LOGIC;
 begin
 	-- FA0 module instantiation
 	Full_Adder_0: FA
-		port map (A => A(0), B => B(0), CIN => CIN, S => S(0), COUT => int_c(0));
+		port map ( A => A(0),
+			   B => B(0), 
+			   CIN => CIN, 
+			   S => S(0), 
+			   COUT => int_c(0) );
 		
 	-- instantiation for the remaining 31 FA modules
 	cascade : for i in 1 to 31 generate
 		Full_Adder_i: FA
-		port map (A => A(i), B => B(i), CIN => int_c(i - 1), S => S(i), COUT => int_c(i));
+		port map ( A => A(i), 
+			   B => B(i), 
+			   CIN => int_c(i - 1), 
+			   S => S(i), 
+			   COUT => int_c(i) );
 	end generate;
 
 	-- last carry bit assignment to COUT outpu
