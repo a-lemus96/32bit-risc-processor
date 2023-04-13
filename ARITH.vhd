@@ -2,7 +2,7 @@
 -- Author: Alejandro Daniel Lemus Najera
 -- 
 -- Create Date: 06:23:21 07/15/2020
--- Design Name: 32-bit adder
+-- Design Name: Arithmetic unit
 -- Module Name: ARITH - Behavioral
 -- Project Name: 32 Bit RISC Processor
 -- Tool versions: ISE Design Suite 14.6
